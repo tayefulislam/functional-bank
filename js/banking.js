@@ -4,16 +4,32 @@
 
 function input(inputId) {
 
-    let depositInput = document.getElementById(inputId);
-    let depositAmountText = depositInput.value;
+    let inputValue = document.getElementById(inputId);
 
-    let depositAmount = parseFloat(depositAmountText);
-    depositInput.value = '';
+    // let inputAmountText = inputValue.value;
+    // let inputAmount = parseFloat(inputAmountText);
 
-    return depositAmount;
+    let inputAmount = parseFloat(inputValue.value);
+    inputValue.value = '';
+
+    // let inputValue = parseFloat(document.getElementById(inputId).value)
+    return inputAmount;
 
 
 }
+
+// Calculating total amount and update 
+function calTotal(valueId, total) {
+
+    // debugger;
+
+    let totalValue = document.getElementById(valueId);
+    let totalValueText = totalValue.innerText;
+    let totalAmount = parseFloat(totalValueText);
+    totalValue.innerText = totalAmount + total
+}
+
+
 
 
 
@@ -25,7 +41,6 @@ document.getElementById('deposit-btn').addEventListener('click', function () {
 
     // get deposit input by call ta funtion
     let getDeposit = input('deposit-amount');
-    console.log(getDeposit);
 
     // let depositInput = document.getElementById('deposit-amount');
     // let depositAmountText = depositInput.value;
@@ -35,15 +50,16 @@ document.getElementById('deposit-btn').addEventListener('click', function () {
 
     //get the deposit balance step : 2
 
-    let depositField = document.getElementById('deposit-total');
+    let getTotal = calTotal('deposit-total', getDeposit);
+    // let depositField = document.getElementById('deposit-total');
 
-    let depositFieldText = depositField.innerText;
+    // let depositFieldText = depositField.innerText;
 
-    let depositFieldAmount = parseFloat(depositFieldText);
+    // let depositFieldAmount = parseFloat(depositFieldText);
 
-    // set the input value(deposit amount) to as new deposite value 
+    // // set the input value(deposit amount) to as new deposite value 
 
-    depositField.innerText = depositFieldAmount + getDeposit;
+    // depositField.innerText = depositFieldAmount + getDeposit;
 
     //update the balance 
 
@@ -65,23 +81,25 @@ document.getElementById('deposit-btn').addEventListener('click', function () {
 //get the withdraw button
 document.getElementById('withdraw-btn').addEventListener('click', function () {
 
-    let getWithdraw = input('withdraw-amount');
 
     // let withdrawInput = document.getElementById('withdraw-amount');
     // let withdrawInputText = withdrawInput.value;
 
     // let withdrawInputAmount = parseFloat(withdrawInputText);
+    let getWithdraw = input('withdraw-amount');
 
 
     // set withdraw main balance 
 
-    let withdrawMainBalance = document.getElementById('withdraw-total');
+    let getTotal = calTotal('withdraw-total', getWithdraw);
+
+    /* let withdrawMainBalance = document.getElementById('withdraw-total');
 
     let withdrawMainBalanceText = withdrawMainBalance.innerText;
 
     let withdrawMainAmount = parseFloat(withdrawMainBalanceText);
 
-    withdrawMainBalance.innerText = withdrawMainAmount + getWithdraw;
+    withdrawMainBalance.innerText = withdrawMainAmount + getWithdraw; */
 
 
     // update balance 
