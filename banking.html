@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Bank</title>
+</head>
+
+<body>
+
+    <header>
+        <h1 class="text-center text-5xl mt-10">Let's Have Some <span class="text-blue-600 font-bold	
+            ">Moooney</span>!</h1>
+    </header>
+
+    <main class="w-3/4 mx-auto">
+        <section class="mt-5">
+            <div class="grid grid-cols-3 gap-4">
+                <div class="bg-blue-400 p-10 rounded text-center">
+                    <h1 class="text-3xl">Deposite</h1>
+                    <h2 class="text-5xl">৳<span id="deposit-total">0000</span></h2>
+                </div>
+                <div class="bg-green-400 p-10 rounded text-center">
+                    <h1 class="text-3xl">Withdraw</h1>
+                    <h2 class="text-5xl">৳<span id="withdraw-total">0000</span></h2>
+                </div>
+                <div class="bg-red-400 p-10 rounded text-center ">
+                    <h1 class="text-3xl">Balance</h1>
+                    <h2 class="text-5xl">৳<span id="balance-total">1250</span></h2>
+                </div>
+
+            </div>
+        </section>
+
+       
+
+        <!-- deposit and withdraw section -->
+
+        <section class="mt-5">
+
+            <div class="grid grid-cols-2 gap-4">
+
+                <div class="bg-red-400">
+
+
+                    <div class="rounded">
+                        <h1 class="text-bold text-center">Please enter your amouunt</h1>
+
+
+                        <input id="deposit-amount" class="mt-5 text-center rounded w-3/4 ml-5" placeholder="enter $">
+
+                        <button id="deposit-btn" class="bg-green-400 p-3 rounded mt-5 ml-10 mb-5">Deposite</button>
+                    </div>
+
+
+                </div>
+                <div class="bg-blue-400">
+
+
+                    <div class="rounded">
+                        <h1 class="text-bold text-center">Please enter your amouunt</h1>
+
+
+                        <input id="withdraw-amount" class="mt-5 text-center rounded w-3/4 ml-5" placeholder="enter $">
+
+                        <button id="withdraw-btn" class="bg-green-400 p-3 rounded mt-5 ml-10 mb-5">Withdraw</button>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+
+    <script src="js/banking.js"></script>
+</body>
+
+</html>
